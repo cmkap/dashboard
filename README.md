@@ -2,6 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Please download the chrome extension 'Moesif Origin & CORS Changer' if you are facing any CORS related issues and toggle the setting on
+
+ https://chrome.google.com/webstore/detail/moesif-origin-cors-change/digfbfaphojjndkpccljibejjbppifbc
+
+
 ## Available Scripts
 
 In the project directory, you can run:
