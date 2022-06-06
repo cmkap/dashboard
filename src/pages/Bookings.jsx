@@ -68,8 +68,8 @@ function Bookings() {
           <div className='flex justify-between items-center'>
             <div>
               <p className='font-bold text-gray-400'>Ticket Sales</p>
-              <p className='text-2xl text-gray-800'>Confirmed Ticket Sales £{ confirmedTicket } </p>
-              <p className='text-1xl text-gray-800'>Pending Tickets Sales: £{ pendingTicket } </p>
+              <p className='font-bold text-1xl text-gray-800'>Confirmed Ticket Sales £{ confirmedTicket } </p>
+              <p className='text-1xl text-blue-800'>Pending Tickets Sales: £{ pendingTicket } </p>
               <p className='text-1xl text-red-400'>Refunded Tickets Sales: £{ refundedTicket }</p>
             </div>
           </div>
@@ -78,9 +78,11 @@ function Bookings() {
         </div>
       </div>
       <div className='flex flex-wrap lg:flex-nowrap justify-center bg-white' text-gray-400>
+        <div>
         <h1>Great Run Confirmed Tickets Sales: £{greatRunSales}</h1>
         <h1>Limelight Sports Club Confirmed Tickets Sales: £{sportsClubSales}</h1>
         <h1>Run Through Confirmed Tickets Sales: £{runThroughSales}</h1>
+        </div>
       </div>
       
     </div>
