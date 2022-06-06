@@ -1,20 +1,30 @@
 import React from 'react'
-import { GridComponent, ColumnsDirective, ColumnDirective, Resize, Sort, ContextMenu, Filter, Page, ExcelExport, PdfExport, Edit, Inject} from '@syncfusion/ej2-react-grids'
+import {useEffect, useState} from 'react';
+import { GridComponent, ColumnsDirective, ColumnDirective, Sort, Inject} from '@syncfusion/ej2-react-grids'
+import Axios from 'axios';
 
-import {letsDoThisData} from '../data/letsDoThisData'
 
-import { ordersData, contextMenuItems, ordersGrid, lDTGrid} from '../data/dummy';
 
 import { Header } from '../components'
 
-import data from '../data/data.json'
 
 function Participants() {
+  const [participants, setParticipants] = useState([]);
+
+  const fetchParticipants = async() => {
+    const response = await Axios.get('https://ldt-tech-test.herokuapp.com/api/startlistentries')
+    setParticipants(response.data)
+  }
+
+  useEffect(() => {
+    fetchParticipants();
+  },[])
+
   return (
     <div className='m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl'>
       <Header category="page" title='Participants' />
-   
-      <GridComponent id="gridcomp" dataSource={data} allowSorting>
+    {console.log(participants)}
+      <GridComponent id="gridcomp" dataSource={participants} allowSorting>
         <ColumnsDirective>
                 <ColumnDirective field='id' headerText="ID" width='100'/>
                 <ColumnDirective field='firstName' headerText="First Name" width='100' textAlign="Right"/>

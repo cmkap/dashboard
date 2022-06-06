@@ -69,22 +69,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-npm install --lagacy-peer-deps for tutorial dependencies
-
-components folder
-context folder
-pages include one of more components
-data folder includes images and demo data we can use acroos the entire app
-
-import {BrowserRouter, Routes, Route } from 'react-router-dom';
-z index
-
-easily export compents in one line... make a file index.jsx
-
-crt/command w--- closes pages
-
-
-because of index.jsx we can import in one line
-
-shortcut
-alt + click to highlight multiple items
