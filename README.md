@@ -1,5 +1,20 @@
 # Dashboard Application
 
+1. organisers can apply a filters by clicking headings on the participants page so that they can see their info in a sorted order.
+
+2. It is also possible for each organiser to see how much they have made in ticket sales in their dashboard.
+
+### Possible extensions for organiser
+
+1. Send an automated reminder to non-confirmed statuses
+2. Pagination
+3. Abiliy to download the start list
+
+### Posible extensions for participant
+
+1. Age verication software for age restricted events
+2. NFT, web 3.0 and blockchain integration 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Please download the chrome extension 'Moesif Origin & CORS Changer' if you are facing any CORS related issues and toggle the setting on
