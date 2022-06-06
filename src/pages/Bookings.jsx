@@ -2,26 +2,18 @@ import React from 'react'
 import {useEffect, useState} from 'react';
 import Axios from 'axios';
 
-
-
-
 function Bookings() {
   const [participants, setParticipants] = useState([]);
-
 
   const fetchParticipants = async() => {
     const response = await Axios.get('https://ldt-tech-test.herokuapp.com/api/startlistentries')
   
     setParticipants(response.data.map(item => item['ticketPrice'].value).reduce((total, amount) => total + amount))
-    
   }
-
 
   useEffect(() => {
     fetchParticipants();
   },[])
-
- 
 
   return (
     <div className='mt-12'>
@@ -32,7 +24,7 @@ function Bookings() {
               <p className='font-bold text-gray-400'>Ticket Sales</p>
               <p className='text-2xl'>
                 £{ participants }
-                </p>
+              </p>
             </div>
           </div>
           <div>

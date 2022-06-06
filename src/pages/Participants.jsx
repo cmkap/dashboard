@@ -3,8 +3,6 @@ import {useEffect, useState} from 'react';
 import { GridComponent, ColumnsDirective, ColumnDirective, Sort, Inject} from '@syncfusion/ej2-react-grids'
 import Axios from 'axios';
 
-
-
 import { Header } from '../components'
 
 
@@ -23,7 +21,7 @@ function Participants() {
   return (
     <div className='m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl'>
       <Header category="page" title='Participants' />
-    {console.log(participants)}
+
       <GridComponent id="gridcomp" dataSource={participants} allowSorting>
         <ColumnsDirective>
                 <ColumnDirective field='id' headerText="ID" width='100'/>
