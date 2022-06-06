@@ -3,12 +3,12 @@ import {useEffect, useState} from 'react';
 import Axios from 'axios';
 
 function Bookings() {
-  const [participants, setParticipants] = useState([]);
+  const [moneyRaised, setMoneyRaised] = useState([]);
 
   const fetchParticipants = async() => {
     const response = await Axios.get('https://ldt-tech-test.herokuapp.com/api/startlistentries')
   
-    setParticipants(response.data.map(item => item['ticketPrice'].value).reduce((total, amount) => total + amount))
+    setMoneyRaised(response.data.map(item => item['ticketPrice'].value).reduce((total, amount) => total + amount))
   }
 
   useEffect(() => {
@@ -23,7 +23,7 @@ function Bookings() {
             <div>
               <p className='font-bold text-gray-400'>Ticket Sales</p>
               <p className='text-2xl'>
-                £{ participants }
+                £{ moneyRaised }
               </p>
             </div>
           </div>
