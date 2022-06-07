@@ -1,4 +1,4 @@
-import React,{ useEffect } from 'react'
+import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
@@ -62,15 +62,3 @@ const App = () => {
 }
 
 export default App
-
-// rafce
-//hover light grey
-
-// border radius 50% to make it to a circle
-
-//theme written in inline style ?? for further funtionality instead of class name look up positives and negatives
-
-//side bar true then show side bar
-// w-72-- width of 18 rem and fixed in positioning-- size of the side bar -- sidebar is the class name
-/// sidebar backround white
-// w-0 width of zero
