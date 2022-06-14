@@ -5,6 +5,7 @@ import Axios from 'axios';
 function Bookings() {
   
   const [participant, setParticipant] =useState([]);
+  const [activeDiv, setActiveDiv] = useState(true)
 
   useEffect(() => {
 
@@ -38,28 +39,21 @@ function Bookings() {
     }
     return total;
   }, 0);
- 
-  const greatRunSales = participant.reduce((total, item) => {
-    if (item.organiserId === 26391) {
-      total += item.ticketPrice.value;
-    }
-    return total;
-  }, 0);
-  
-  const sportsClubSales = participant.reduce((total, item) => {
-    if (item.organiserId === 154979) {
-      total += item.ticketPrice.value;
-    }
-    return total;
-  }, 0);
 
+  const organiserFunction = ( id ) => {
+    return participant.reduce((total, item) => {
+            if (item.organiserId === id) {
+              total += item.ticketPrice.value;
+            }
+            return total;
+          }, 0);
+    
+  }
 
-  const runThroughSales = participant.reduce((total, item) => {
-    if (item.organiserId === 69173) {
-      total += item.ticketPrice.value;
-    }
-    return total;
-  }, 0);
+const buttonFunction = () => {
+  setActiveDiv(!activeDiv)
+}
+
 
   return (
     <div className='mt-12'>
@@ -79,11 +73,22 @@ function Bookings() {
       </div>
       <div className='flex flex-wrap lg:flex-nowrap justify-center bg-white' text-gray-400>
         <div>
-        <h1>Great Run Confirmed Tickets Sales: £{greatRunSales}</h1>
-        <h1>Limelight Sports Club Confirmed Tickets Sales: £{sportsClubSales}</h1>
-        <h1>Run Through Confirmed Tickets Sales: £{runThroughSales}</h1>
-        </div>
+        <h1>Great Run Confirmed Tickets Sales: £{organiserFunction(26391)}</h1>
+      {activeDiv && (<>
+        <h1>Limelight Sports Club Confirmed Tickets Sales: £{organiserFunction(154979)}</h1>
+        <h1>Run Through Confirmed Tickets Sales: £{organiserFunction(69173)}</h1>
+        </> )}
       </div>
+        
+      </div>
+      <div>
+          <button
+          onClick={buttonFunction}
+          >
+          Hide
+          </button>
+      </div>
+
       
     </div>
   )
