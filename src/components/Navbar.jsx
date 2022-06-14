@@ -25,7 +25,6 @@ const NavButton = ({title, customFunction, icon, color, dotColor}) => (
       className='absolute inline-flex rounded-full h-2 w-2 right-2 top-2'
       />
         {icon}
-      
     </button>
   </TooltipComponent>
 )
@@ -62,22 +61,23 @@ const Navbar = () => {
       icon={<AiOutlineMenu />} 
       />
       <div className='flex'>
-      <NavButton 
-      title='Notifications' 
-      customFunction={() => handleClick('notification')} 
-      color="blue" 
-      icon={<RiNotification3Line />} 
-      />
-      <TooltipComponent
-      content='Profile'
-      position='BottomCenter'
-      >
+        <NavButton 
+        title='Notifications' 
+        customFunction={() => handleClick('notification')} 
+        color="blue" 
+        icon={<RiNotification3Line />} 
+        />
+        <TooltipComponent
+        content='Profile'
+        position='BottomCenter'
+        >
         <div className=" flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
         onClick={() => handleClick('userProfile')}
         >
           <img 
           className="rounded full w-8 h-8"
           src={avatar}
+          alt="profileImage"
           />
           <p>
             <span className='text-gray-400 text-14'>Hi, </span>{' '}
@@ -89,7 +89,7 @@ const Navbar = () => {
         </div>
 
       </TooltipComponent>
-      {isClicked.notification && <Notification />}
+      {isClicked.notification && <Notification />} 
       {isClicked.userProfile && <UserProfile />}
 
       </div>

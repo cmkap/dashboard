@@ -7,8 +7,10 @@ import App from './App';
 import { ContextProvider } from "./contexts/ContextProvider"
 
 ReactDOM.render(
-    <ContextProvider>
-        <App />
-    </ContextProvider>
+    <React.StrictMode>
+        <ContextProvider>
+            <App />
+        </ContextProvider>
+    </React.StrictMode>
     , document.getElementById('root')
     );

@@ -1,22 +1,10 @@
 import React from 'react'
-import {useEffect, useState} from 'react';
 import { GridComponent, ColumnsDirective, ColumnDirective, Sort, Inject} from '@syncfusion/ej2-react-grids'
-import Axios from 'axios';
 
 import { Header } from '../components'
 
 
-function Participants() {
-  const [participants, setParticipants] = useState([]);
-
-  const fetchParticipants = async() => {
-    const response = await Axios.get('https://ldt-tech-test.herokuapp.com/api/startlistentries')
-    setParticipants(response.data)
-  }
-
-  useEffect(() => {
-    fetchParticipants();
-  },[])
+function Participants({participants}) {
 
   return (
     <div className='m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl'>

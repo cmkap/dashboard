@@ -21,7 +21,7 @@ Please download the chrome extension 'Moesif Origin & CORS Changer' if you are f
 
  https://chrome.google.com/webstore/detail/moesif-origin-cors-change/digfbfaphojjndkpccljibejjbppifbc
 
-
+npm install --lagacy-peer
 ## Available Scripts
 
 In the project directory, you can run:
