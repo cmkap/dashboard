@@ -1,6 +1,4 @@
 import React from 'react'
-import { useEffect, useState } from 'react';
-import Axios from 'axios';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
@@ -12,18 +10,11 @@ import { useStateContext } from './contexts/ContextProvider';
 import './App.css'
 
 const App = () => {
-    const [participants, setParticipants] = useState([]);
+ 
 
     const { activeMenu } = useStateContext();
 
-    useEffect(() => {
-        const fetchParticipants = async() => {
-          const response = await Axios.get('https://ldt-tech-test.herokuapp.com/api/startlistentries')
-    
-          setParticipants(response.data)
-        }
-        fetchParticipants()
-      },[])
+   
 
     
     
@@ -57,11 +48,11 @@ const App = () => {
                         <div>
                             <Routes>
                                 {/* Dashboard */}
-                                <Route path="/" element={<Bookings participants={participants}/>} />
-                                <Route path="/bookings" element={<Bookings participants={participants}/>} />
+                                <Route path="/" element={<Bookings />} />
+                                <Route path="/bookings" element={<Bookings />} />
 
                                 {/* Pages */}
-                                <Route path="/participants" element={<Participants participants={participants}/>}/>
+                                <Route path="/participants" element={<Participants />}/>
                             </Routes>
                         </div>
                     </div>

@@ -1,8 +1,9 @@
 import React from 'react'
+import { useStateContext } from '../contexts/ContextProvider';
 
-function Bookings({participants}) {
+function Bookings() {
   
- 
+  const { participants } = useStateContext();
 
   
   const confirmedTicket = participants.reduce((total, item) => {
