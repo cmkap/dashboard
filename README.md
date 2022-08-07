@@ -12,8 +12,8 @@
 
 ### Posible extensions for participant
 
-1. Age verication software for age restricted events
-2. NFT, web 3.0 and blockchain integration 
+ Age verication software for age restricted events
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
