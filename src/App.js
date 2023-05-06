@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect, useState} from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
@@ -8,10 +8,33 @@ import { Bookings,  Participants} from './pages'
 
 import { useStateContext } from './contexts/ContextProvider';
 
+
+
 import './App.css'
+import { Axios } from 'axios';
+
+import data  from './data/data.json'
 
 const App = () => {
     const { activeMenu } = useStateContext();
+    const [participants, setParticipants] = useState([])
+
+    useEffect(() => {
+        fetchParticipants();
+      }, []);
+    
+      const fetchParticipants = async () => {
+        try {
+            const response = await Axios.get(
+              "https://ldt-tech-test.herokuapp.com/api/startlistentries"
+            );
+            setParticipants(response.data);
+            
+        } catch (error) {
+            console.log(error)
+            setParticipants(data)
+        }
+      };
     
 
     return (
@@ -45,11 +68,11 @@ const App = () => {
                     <div>
                         <Routes>
                             {/* Dashboard */}
-                            <Route path="/" element={<Bookings />} />
-                            <Route path="/bookings" element={<Bookings />} />
+                            <Route path="/" element={<Bookings participants={participants} />} />
+                            <Route path="/bookings" element={<Bookings  participants={participants}/>} />
 
                             {/* Pages */}
-                            <Route path="/participants" element={<Participants />}/>
+                            <Route path="/participants" element={<Participants participants={participants} />}/>
 
                         </Routes>
                         </div>
